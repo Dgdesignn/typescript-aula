@@ -1,3 +1,4 @@
+
 export class Negociacao{
     private _data: Date;
     private _quantdade: number;
