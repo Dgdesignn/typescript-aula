@@ -9,7 +9,7 @@ export class Negociacao {
         return this._quantdade;
     }
     get data() {
-        const date = new Date(this._data.getTime());
+        const date = new Date(this._data.getDate());
         return date;
     }
     get valor() {
