@@ -1,7 +1,7 @@
 import { Negociacao } from './negociacao';
 
 export class Negociacoes{
-    private negociacoes: Array<Negociacao> = []
+    private negociacoes: Negociacao[] = []
 
     constructor(){
         
@@ -11,7 +11,7 @@ export class Negociacoes{
         this.negociacoes.push(negociacao);
     }
 
-    listar(): ReadonlyArray<Negociacao> {
+    listar(): readonly Negociacao[] {
         return this.negociacoes
     }
 }
