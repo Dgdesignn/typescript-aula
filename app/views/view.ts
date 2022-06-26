@@ -7,10 +7,7 @@ export abstract class View<T>{
         this.element = document.querySelector(selector);
     }
 
-    template(model:T):string{
-
-        throw Error("Precisas implementar a class template!")
-    }
+    abstract template(model:T):string;
 
     update(model:T):void{
         const template = this.template(model);
