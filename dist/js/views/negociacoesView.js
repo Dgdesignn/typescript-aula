@@ -14,7 +14,7 @@ export class NegociacoesViews extends View {
                     ${model.listar().map(data => {
             return `
                             <tr>
-                                <td>${new Intl.DateTimeFormat('pt-AO').format(data.data)}</td>
+                                <td>${this.formatData(data.data)}</td>
                                 <td>${data.quantdade}</td>
                                 <td>${data.valor}</td>
                             </tr>
@@ -25,5 +25,9 @@ export class NegociacoesViews extends View {
                 </tbody>
             </table>
         `;
+    }
+    formatData(data) {
+        return new Intl.DateTimeFormat('pt-AO')
+            .format(data);
     }
 }

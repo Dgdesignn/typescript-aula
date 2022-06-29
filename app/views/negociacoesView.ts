@@ -3,7 +3,6 @@ import { View } from './view.js';
 
 export class NegociacoesViews extends View<Negociacoes>{
     
-
    protected template(model:Negociacoes):string{
         
         return `
@@ -20,7 +19,7 @@ export class NegociacoesViews extends View<Negociacoes>{
                         model.listar().map(data=>{
                         return `
                             <tr>
-                                <td>${new Intl.DateTimeFormat('pt-AO').format(data.data)}</td>
+                                <td>${this.formatData(data.data)}</td>
                                 <td>${data.quantdade}</td>
                                 <td>${data.valor}</td>
                             </tr>
@@ -33,6 +32,11 @@ export class NegociacoesViews extends View<Negociacoes>{
                 </tbody>
             </table>
         `
+    }
+
+    private formatData(data:Date):string{
+        return new Intl.DateTimeFormat('pt-AO')
+                       .format(data);
     }
 
 
